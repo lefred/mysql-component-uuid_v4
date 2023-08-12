@@ -1,6 +1,6 @@
 # mysql-component-uuid_v4
 
-Extending MySQL using the Component Infrastructure - Adding a UUID v4 generator user fonction.
+Extending MySQL using the Component Infrastructure - Adding a UUID v4 generator user function.
 
 ```
  MySQL > install component "file://component_uuid_v4";
