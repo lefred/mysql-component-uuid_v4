@@ -15,4 +15,18 @@ Extending MySQL using the Component Infrastructure - Adding a UUID v4 generator 
  1 row in set (0.0002 sec)
 ```
 
+# Compilation notes
+
+Since MySQL 8.3.0, boost is included in the source code (extra directory), but it's not a full
+version, some modules are missing to compile this component.
+
+You need to copy them first:
+
+```
+cp -r boost_1_77_0/boost/uuid/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp -r boost_1_77_0/boost/tti/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp -r boost_1_77_0/boost/io/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp -r boost_1_77_0/boost/random/ mysql-%{version}/extra/boost/boost_1_77_0/boost/
+cp boost_1_77_0/boost/random.hpp mysql-%{version}/extra/boost/boost_1_77_0/boost/
+```
 
